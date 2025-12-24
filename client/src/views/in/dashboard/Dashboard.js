@@ -112,7 +112,7 @@ const Dashboard = () => {
         <CModalBody>{parser(announce.body)}</CModalBody>
         <CModalFooter>
           <CButton color="dark" onClick={closeAnnModal}>
-            hello
+            OK
           </CButton>
         </CModalFooter>
       </CModal>
