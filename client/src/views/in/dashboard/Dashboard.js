@@ -111,9 +111,7 @@ const Dashboard = () => {
         </CModalHeader>
         <CModalBody>{parser(announce.body)}</CModalBody>
         <CModalFooter>
-          <CButton color="dark" onClick={closeAnnModal}>
-            OK
-          </CButton>
+          <CButton color="dark" onClick={closeAnnModal}></CButton>
         </CModalFooter>
       </CModal>
       <CContainer fluid className="align-items-center text-color-black w-75">
