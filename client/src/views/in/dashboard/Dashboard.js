@@ -130,39 +130,32 @@ const Dashboard = () => {
               </h1>
             </CCardHeader>
             <CCardBody>
-              {announces.map((ann, index) => {
-                return (
-                  <CCardHeader
-                    className="mb-1 text-center d-flex justify-content-between align-items-center p-2 rounded-3 announce"
-                    key={index}
-                    type="button"
-                  >
-                    <h2
-                      onClick={(e) => {
-                        openAnnModal(e, index)
-                      }}
-                      className="m-0"
-                    >
-                      <b>{ann.title}</b>
-                    </h2>
-                    <span>
-                      {ann.date}
-                      {isAuth && (
-                        <>
-                          <Link to={`/auth/announce/${ann._id}`}>
-                            <CIcon icon={React.icons.cilPencil} className="mx-3" />
-                          </Link>
-                          <CIcon
-                            onClick={(e) => delAnnouncement(ann._id)}
-                            icon={React.icons.cilTrash}
-                            className="mr-3"
-                          />
-                        </>
-                      )}
-                    </span>
-                  </CCardHeader>
-                )
-              })}
+              {announces.map((ann, index) => (
+                <CCardHeader
+                  className="mb-1 d-flex justify-content-between align-items-center p-2 rounded-3 announce"
+                  key={index}
+                  type="button"
+                >
+                  <h2 onClick={() => openAnnModal(index)} className="m-0 announce-title">
+                    <b>{ann.title}</b>
+                  </h2>
+                  <span className="announce-date">
+                    {ann.date}
+                    {isAuth && (
+                      <>
+                        <Link to={`/auth/announce/${ann._id}`}>
+                          <CIcon icon={React.icons.cilPencil} className="mx-3" />
+                        </Link>
+                        <CIcon
+                          onClick={() => delAnnouncement(ann._id)}
+                          icon={React.icons.cilTrash}
+                          className="mr-3"
+                        />
+                      </>
+                    )}
+                  </span>
+                </CCardHeader>
+              ))}
             </CCardBody>
           </CCard>
         </CRow>
