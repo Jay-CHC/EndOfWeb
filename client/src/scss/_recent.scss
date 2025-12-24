@@ -27,6 +27,13 @@
 .announce:hover {
   transform: scale(1.05);
 }
+
 .announce {
-  border-left: 0.7rem solid #0d6efd;
+  border-left: 0.7rem solid #000000;
 }
+
+/*
+.announce {
+  border-left: none;
+}
+*/
